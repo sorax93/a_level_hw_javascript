@@ -14,205 +14,203 @@ else {
     document.write("<div style='background-color: gray;'>Я не понял</div>");
 }
 
-// alert("task-2");
+alert("task-2");
 
-// var age = prompt("Сколько вам лет?","");
+var age = prompt("Сколько вам лет?","");
 
-// if ((age < 0) || (age>100)){
-//     alert("Неправильное Значение");
-// }
-// else {
-//     alert("Вам: " + age + " лет")
-// }
+if ((age < 0) || (age>100)){
+    alert("Неправильное Значение");
+}
+else {
+    alert("Вам: " + age + " лет")
+}
 
-// alert("task-3");
+alert("task-3");
 
-// var month = prompt("Enter the month","");
-// switch (month){
-//     case "january": alert("31 days");
-//         break;
-//     case "february": alert("29 days");
-//         break;
-//     case "march": alert("31 days");
-//         break;
-//     case "april": alert("30 days");
-//         break;
-//     case "may": alert("31 days");
-//         break;
-//     case "june": alert("30 days");
-//         break;
-//     case "july": alert("31 days");
-//         break;
-//     case "august": alert("31 days");
-//         break;
-//     case "september": alert("30 days");
-//         break;
-//     case "october": alert("31 days");
-//         break;
-//     case "november": alert("30 days");
-//         break;
-//     case "december": alert("31 days");
-//         break;
-//     default: alert("Wrong month");
-// }
+var month = prompt("Enter the month","");
+switch (month){
+    case "january": alert("31 days");
+        break;
+    case "february": alert("29 days");
+        break;
+    case "march": alert("31 days");
+        break;
+    case "april": alert("30 days");
+        break;
+    case "may": alert("31 days");
+        break;
+    case "june": alert("30 days");
+        break;
+    case "july": alert("31 days");
+        break;
+    case "august": alert("31 days");
+        break;
+    case "september": alert("30 days");
+        break;
+    case "october": alert("31 days");
+        break;
+    case "november": alert("30 days");
+        break;
+    case "december": alert("31 days");
+        break;
+    default: alert("Wrong month");
+}
 
-// alert("task-4");
+alert("task-4");
 
-// var age = prompt("Сколько вам лет?","");
+var age = prompt("Сколько вам лет?","");
 
-// var message = (age < 6) ? 'Здравствуй, малыш!' :
-//   (age < 16) ? 'Привет, школьник!' :
-//   (age < 24) ? 'Привет, студент!' :
-//   (age < 60) ? 'Приветствуем Вас!' :
-//   (age < 90) ? 'Здравствуй, уважемый пенсионер!' :
-//   'Здравствуйте, долгожитель!';
+var message = (age < 6) ? 'Здравствуй, малыш!' :
+  (age < 16) ? 'Привет, школьник!' :
+  (age < 24) ? 'Привет, студент!' :
+  (age < 60) ? 'Приветствуем Вас!' :
+  (age < 90) ? 'Здравствуй, уважемый пенсионер!' :
+  'Здравствуйте, долгожитель!';
 
-// alert( message );
+alert( message );
 
-// alert("task-5");
+alert("task-5");
 
-// var age = prompt("Сколько вам лет?","");
+var age = prompt("Сколько вам лет?","");
 
-// var message = (age < 6) ? 'Здравствуй, малыш! Сегодня прекрасное утро!' :
-//   (age < 16) ? 'Привет, школьник! Сегодня будет пасмурно!' :
-//   (age < 24) ? 'Привет, студент! Сегодня пятница!' :
-//   (age < 60) ? 'Приветствуем Вас! Сегодня хороший день!' :
-//   (age < 80) ? 'Здравствуй, уважемый пенсионер! Сегодня прекрасный вечер!' :
-//   'Здравствуйте, долгожитель! Сегодня солнечное утро!';
+var message = (age < 6) ? 'Здравствуй, малыш! Сегодня прекрасное утро!' :
+  (age < 16) ? 'Привет, школьник! Сегодня будет пасмурно!' :
+  (age < 24) ? 'Привет, студент! Сегодня пятница!' :
+  (age < 60) ? 'Приветствуем Вас! Сегодня хороший день!' :
+  (age < 80) ? 'Здравствуй, уважемый пенсионер! Сегодня прекрасный вечер!' :
+  'Здравствуйте, долгожитель! Сегодня солнечное утро!';
 
-// alert( message );
+alert( message );
 
-// alert("task-6");
-// var htmlData = {
-//     "tagName": "body",
-//     "subTags": [
-//         {
-//             "tagName": "div",
-//             "subTags": [
-//                 {
-//                     "tagName": "span",
-//                     "text": "Enter a data please:"
-//                 },
-//                 {
-//                     "tagName": "br"
-//                 },
-//                 {
-//                     "tagName": "input",
-//                     "attrs": {
-//                         "type" : "text",
-//                         "id" : "name"
-//                     }
-//                 },
-//                 {
-//                     "tagName": "input",
-//                     "attrs": {
-//                         "type": "text",
-//                         "id": "surname"
-//                     }    
-//                 }
-//             ]
-//         },
-//         {
-//             "tagName": "div",
-//             "subTags": [
-//                 {
-//                     "tagName": "button",
-//                     "text": "OK",
-//                     "attrs": {
-//                         "id": "ok"
-//                     }
-//                 },
-//                 {
-//                     "tagName": "button",
-//                     "text": "Cancel",
-//                     "attrs": {
-//                         "id": "cancel"
-//                     }
-//                 }
-//             ]
-//         }
-//     ]
-// };
-// console.log(htmlData);
+alert("task-6");
+var htmlData = {
+    "tagName": "body",
+    "subTags": [
+        {
+            "tagName": "div",
+            "subTags": [
+                {
+                    "tagName": "span",
+                    "text": "Enter a data please:"
+                },
+                {
+                    "tagName": "br"
+                },
+                {
+                    "tagName": "input",
+                    "attrs": {
+                        "type" : "text",
+                        "id" : "name"
+                    }
+                },
+                {
+                    "tagName": "input",
+                    "attrs": {
+                        "type": "text",
+                        "id": "surname"
+                    }    
+                }
+            ]
+        },
+        {
+            "tagName": "div",
+            "subTags": [
+                {
+                    "tagName": "button",
+                    "text": "OK",
+                    "attrs": {
+                        "id": "ok"
+                    }
+                },
+                {
+                    "tagName": "button",
+                    "text": "Cancel",
+                    "attrs": {
+                        "id": "cancel"
+                    }
+                }
+            ]
+        }
+    ]
+};
+console.log(htmlData);
 
-// alert("task-7");
+alert("task-7");
 
-// var notebook = {
-//     brand: prompt("Enter brand"),
-//     type:  prompt("Enter type"),
-//     model: prompt("Enter model"),
-//     ram: prompt("Enter ram"),
-//     size: prompt("Enter size"),
-//     weight: prompt("Enter weight"),
-//     resolution: {
-//         width: prompt("Enter width"),
-//         height: prompt("Enter height"),
-//     },
-// };
-// alert('brand: ' + notebook.brand + '\n' + 'type: ' + notebook.type + '\n' + 'model: ' + notebook.model + '\n' + 'ram: ' + notebook.ram + '\n' + 'size: ' + notebook.size + '\n' + 'weight: ' + notebook.weight + '\n' + 'resolution height: ' + notebook.resolution.height + '\n' + 'resolution width: ' + notebook.resolution.width);
+var notebook = {
+    brand: prompt("Enter brand"),
+    type:  prompt("Enter type"),
+    model: prompt("Enter model"),
+    ram: prompt("Enter ram"),
+    size: prompt("Enter size"),
+    weight: prompt("Enter weight"),
+    resolution: {
+        width: prompt("Enter width"),
+        height: prompt("Enter height"),
+    },
+};
 
-// var phone = {
-//     brand: prompt("Enter brand"),
-//     model: prompt("Enter model"),
-//     ram: prompt("Enter ram"),
-//     color: prompt("Enter color"),
-// };
-// alert('brand: ' + phone.brand + '\n' + 'model: ' + phone.model + '\n' + 'ram: ' + phone.ram + '\n' + 'color: ' + phone.color);
+var phone = {
+    brand: prompt("Enter brand"),
+    model: prompt("Enter model"),
+    ram: prompt("Enter ram"),
+    color: prompt("Enter color"),
+};
 
-// var person = {
-//     name: prompt("Enter Name"),
-//     surname: prompt("Enter Surname"),
-//     married: confirm("Are you married?"),
-// }
-// alert('name: ' + name + '\n' + 'surname: ' + surname + '\n' + 'married: ' + married);
+var person = {
+    name: prompt("Enter Name"),
+    surname: prompt("Enter Surname"),
+    married: confirm("Are you married?"),
+}
 
-// alert("task-8");
 
-// var qs = '';
+alert("task-8");
 
-// do{
-//     qs = confirm('Yes or No'); 
-// }
-// while (qs != true) 
+var qs = '';
 
-// alert("task-9");
+do{
+    qs = confirm('Yes or No'); 
+}
+while (qs != true) 
 
-// var n = prompt("Введите число:");
+alert("task-9");
 
-// next:
-// for (var i = 2; i <= n; i++) { 
-//     for (var j = 2; j < i; j++) { 
-//         if (i % j == 0) continue next; 
-//     }
-//   console.log( i ); 
-// }
+var n = prompt("Введите число:");
 
-// alert("task-10");
+next:
+for (var i = 2; i <= n; i++) { 
+    for (var j = 2; j < i; j++) { 
+        if (i % j == 0) continue next; 
+    }
+  console.log( i ); 
+}
 
-// var i = 0;
-// while(true) {
-// 	i++;
-// 	if(Math.random() > 0.9) {
-// 		alert(i);
-// 		break;
-// 	}
-// }
+alert("task-10");
 
-// alert("task-11");
+var i = 0;
+while(true) {
+	i++;
+	if(Math.random() > 0.9) {
+		alert(i);
+		break;
+	}
+}
 
-// var str = '';
-// var n = prompt("Введите число:");
+alert("task-11");
 
-// for (var i = 0; i < n; i++) {
-// 	str += '#';
-// }
+var str = '';
+var n = prompt("Введите число:");
 
-// alert(str);
+for (var i = 0; i < n; i++) {
+	str += '#';
+}
 
-// alert("task-12");
+alert(str);
 
-// var arr = [4, 51, 20, 24, 121, 2321, 123, 55];
-// for (var i = 0; i < arr.length; i++) {
-//     arr[i] = Math.pow([i],3)
-//     console.log(arr[i]);
-// } 
+alert("task-12");
+
+var arr = [4, 51, 20, 24, 121, 2321, 123, 55];
+for (var i = 0; i < arr.length; i++) {
+    arr[i] = Math.pow([i],3)
+    console.log(arr[i]);
+} 
