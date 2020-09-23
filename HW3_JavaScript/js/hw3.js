@@ -121,3 +121,14 @@ console.log(sum(arguments));
 
 console.log('Task-12')
 
+var array = [1, 2, 3, 4, 5];
+
+function splice(array, start, amount, ...items) {
+  return [
+    ...array.slice(0, start),
+    ...items,
+    ...array.slice((start + amount), array.Length),
+  ]
+}
+
+console.log(splice(array,2,0,15,10));
