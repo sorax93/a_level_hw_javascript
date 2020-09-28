@@ -141,4 +141,41 @@ console.log(filter(array, num => num > 0));
 
 alert('Task-9');
 
+let someTree = {
+    tagName: "table",
+    children: [{
+        tagName: "tr",
+        children: [{
+            tagName: "td",
+            text: "some text"
+        }, {
+            tagName: "td",
+            text: "some text 2"
+        }]
+    }],
+    attrs: {
+        border: 1
+    }
+};
 
+function createTable(tagName, attrs, text) {
+    let newTag = document.createElement(tagName);
+    if (attrs)
+        for (let name in attrs) newTag.setAttribute(name, attrs[name]);
+    if (text) newTag.textContent = text;
+    return newTag
+}
+
+function getData(anyTree) {
+    let tagName = anyTree.tagName;
+    let attrs = anyTree.attrs;
+    let text = anyTree.text;
+    let newTags = createTable(tagName, attrs, text);
+    if (anyTree.children) {
+        anyTree.children.forEach((tag)=>{tag = getData(tag); newTags.appendChild(tag);})   
+    };
+    return newTags
+}
+let table = getData(someTree);
+wrapper.appendChild(table);
+ 
