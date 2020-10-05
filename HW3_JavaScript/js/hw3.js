@@ -102,22 +102,16 @@ console.log(intRandom(3));
 
 console.log('Task-11')
 
-function sum(arguments) {
-    var sumArgument = 0;
-    for (var argument of Object.values(arguments)) {
-        sumArgument += argument;
+function sum() {
+    let sumArg = 0;
+  
+    for (let i = 0; i < arguments.length; i++) {
+        sumArg += arguments[i];
     }
-    return sumArgument;  
-}
-
-var arguments = {
-    a: 1,
-    b: 3,
-    c: 6,
-    d: 7,
-}
-
-console.log(sum(arguments));
+  
+    return sumArg;
+  }
+alert (sum(1,3,4,2));
 
 console.log('Task-12')
 
