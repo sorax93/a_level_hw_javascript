@@ -35,7 +35,7 @@ outline: none;
 inputNick.after(inputMsg);
 let sendBtn = document.createElement('button');
 sendBtn.setAttribute('id', 'send');
-sendBtn.setAttribute('onclick', 'sendMsg();');
+sendBtn.setAttribute('onclick', 'sendAndCheck();');
 sendBtn.innerText = 'Send';
 sendBtn.style.cssText = `width: 15%;
     align-self: flex-end;
@@ -67,30 +67,32 @@ chat.style.cssText = `background-color: #ddd;
 `;
 chatPanel.after(chat);
 
-function jsonPost(url, data) {
-    return new Promise((resolve, reject) => {
-        var x = new XMLHttpRequest();   
-        x.onerror = () => reject(new Error('jsonPost failed'));
-        x.open("POST", url, true);
-        x.send(JSON.stringify(data));
-        x.onreadystatechange = () => {
-            if (x.readyState == XMLHttpRequest.DONE && x.status == 200){
-                resolve(JSON.parse(x.responseText));
-            }
-            else if (x.status != 200){
-                reject(new Error('status is not 200'));
-            }
-        };
+async function jsonPost(url, data) {
+    let response = await fetch(url, {
+       method: 'POST',
+       body: JSON.stringify(data)
     });
+    if(response.ok){
+        let json = await response.json();
+        return json;
+    } else {
+        alert("Ошибка HTTP: " + response.status);
+    }
 };
 
-function sendMsg() {
-    jsonPost("http://students.a-level.com.ua:10012", {func: 'addMessage', nick: inputNick.value, message: inputMsg.value});
-
+async function sendMsg() {
+    try{
+        jsonPost("http://students.a-level.com.ua:10012", {func: 'addMessage', nick: inputNick.value, message: inputMsg.value});
+    } catch (err) {
+        alert(err);
+    }
 };
-let nextMessageId = 0; 
-function getMessages(){
-    jsonPost("http://students.a-level.com.ua:10012", {func: 'getMessages', messageId: nextMessageId}).then(data => {
+
+let nextMessageId = 0;
+
+async function getMessages(){
+    try{
+        let data = await jsonPost("http://students.a-level.com.ua:10012", {func: 'getMessages', messageId: nextMessageId});
         for (let j in data.data) {
             let msg = data.data[j];
             let el = document.createElement('div');
@@ -100,10 +102,22 @@ function getMessages(){
             chat.prepend(el);
         };
         nextMessageId = data.nextMessageId;
-    });
-    
-}
+    } catch (err) {
+        alert(err);
+    }
+};
+
+async function sendAndCheck() {
+    await sendMsg();
+    await getMessages();
+};
+
+async function checkLoop() {
+    while (true) {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        getMessages();
+    }
+};
 
 getMessages();
-
-setInterval(getMessages,2000);
+checkLoop();
