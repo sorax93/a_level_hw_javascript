@@ -136,7 +136,29 @@ async function domEventPromise() {
     
 };
 
-// async function speedtest(getPromise, count,parallel=1) {
+async function speedtest(getPromise, count, parallel = 1) {
+    let duration = 0;
+    let arrPromises = [];
+    
+    for (let i = 0; i < count; i++) {
+        let time = performance.now();
+        while (arrPromises.length < parallel) { 
+           arrPromises.push(getPromise());
+        }
+        await Promise.all(arrPromises);
+        time = performance.now() - time;
+        duration += time;
+        console.log(arrPromises);
+        console.log(duration);
+    }     
+    return {
+        duration: duration,
+        querySpeed: 1 / (duration / count),
+        queryDuration: duration / count,
+        parallelSpeed: duration / count / parallel / 10000,
+        parallelDuration: 10000 / (duration / count / parallel),
+    };
+}
+speedtest(() => fetch('http://swapi.dev/api/people/1').then(res => res.json()), 10, 5).then((result) => console.log(result));
 
 
-// }
